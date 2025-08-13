@@ -67,33 +67,26 @@ public class actividadflujo {
         String vehiculo = scanner.nextLine();
         System.out.println("ingrese la hora de llegada (formato 24 horas)");
         int hora = scanner.nextInt();
-        int tarifaAuto = 7000;
-        int tarifaMoto = 5000;
-        int tarifaBicicleta = 3000;
-        double recargo = 0;
+        double tarifa = 0;
+
 
         switch (vehiculo.toLowerCase()){
             case "auto":
-                if (hora > 20){
-                    recargo = tarifaAuto * 0.20;
-                }
-                System.out.println("la tarifa de su auto es: " + (tarifaAuto + recargo));
+                tarifa = 7000;
                 break;
             case "moto":
-                if (hora > 20){
-                    recargo = tarifaMoto * 0.20;
-                }
-                System.out.println("la tarifa de su moto es: " + (tarifaMoto + recargo));
+                tarifa = 5000;
                 break;
             case "bicicleta":
-                if (hora > 20){
-                    recargo = tarifaBicicleta * 0.20;
-                }
-                System.out.println("la tarifa de su bicicleta es: " + (tarifaBicicleta + recargo));
+                tarifa = 3000;
                 break;
             default:
                 System.out.println("informacion no valida");
         }
+        if (hora >20){
+            tarifa += tarifa * 0.20;
+        }
+        System.out.println("el costo del parqueo es de: " + tarifa);
     }
 
     public static void tiendaRopa(){
